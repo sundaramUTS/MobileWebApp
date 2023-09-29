@@ -1,0 +1,1957 @@
+.step-screen-sec {
+  background: #f9f9f9;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.step-screen-sec .left-side-bar {
+  position: relative;
+  height: 100%;
+  display: flex;
+  width: 462px;
+  padding: 80px 30px;
+  position: sticky;
+  top: 0;
+}
+
+.step-screen-sec .left-side-bar:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background: url('../../assets/images/shapStep.png'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.step-screen-sec .sidebar {
+  display: flex;
+  max-width: 366px;
+  min-height: 750px;
+  padding: 32px;
+  flex-direction: column;
+  border-radius: 30px;
+  background: linear-gradient(
+    123deg,
+    rgba(255, 255, 255, 0.49) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  background-blend-mode: overlay;
+  box-shadow: 0px 0.93px 23px 0px rgba(69, 42, 124, 0.1);
+  backdrop-filter: blur(38px);
+  position: relative;
+  z-index: 66;
+  left: 30px;
+}
+
+/* .step-screen-sec .sidebar::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 0.64;
+} */
+
+.sidebarButtonMobShow {
+  display: none;
+}
+
+.btnSeprator {
+  color: #232323;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.step-screen-sec .sidebar .logo {
+  width: 119px;
+  margin-bottom: 45px;
+}
+
+.step-screen-sec .sidebar .logo img {
+  width: 100%;
+}
+
+.step-screen-sec .sidebar h2 {
+  color: #232323;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.step-screen-sec .sidebar h2 span {
+  display: block;
+}
+
+.step-screen-sec .sidebar p {
+  color: #676767;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.step-custom {
+  display: flex;
+}
+
+.step-custom .ant-steps-item {
+  padding: 20px 0;
+}
+
+.step-custom .ant-steps-item-content {
+  min-height: auto !important;
+}
+
+.logoutBtn {
+  background: transparent;
+  border: 0;
+  text-align: left;
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logoutBtn:focus {
+  background: transparent;
+  border: 0;
+  text-align: left;
+}
+
+/* step css start */
+
+.ant-steps .ant-steps-item-icon {
+  position: relative;
+  z-index: 44;
+}
+
+.ant-steps.ant-steps-vertical
+  > .ant-steps-item
+  > .ant-steps-item-container
+  > .ant-steps-item-tail {
+  top: 26px;
+  padding: 25px 0 6px;
+  z-index: 1;
+}
+
+.ant-steps
+  .ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after {
+  background-color: #cecccc;
+}
+
+.ant-steps .ant-steps-item-process .ant-steps-item-icon {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #232323;
+}
+
+.ant-steps .ant-steps-item-process .ant-steps-item-icon {
+  color: #232323;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.ant-steps .ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon {
+  color: #676767;
+}
+
+.ant-steps .ant-steps-item-wait .ant-steps-item-icon > .ant-steps-icon {
+  color: #676767;
+}
+
+.ant-steps
+  .ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title {
+  color: #6b6b6b;
+}
+
+.ant-steps
+  .ant-steps-item-wait
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after,
+.ant-steps
+  .ant-steps-item-process
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    #cecccc;
+}
+
+.ant-steps .ant-steps-item-content .ant-steps-item-title {
+  color: #232323;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.ant-steps
+  .ant-steps-item-process
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title {
+  color: #232323;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.ant-steps
+  .ant-steps-item-wait
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title {
+  color: #6b6b6b;
+}
+
+.ant-steps .ant-steps-item-finish .ant-steps-item-icon {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.ant-steps .ant-steps-item-finish .ant-steps-icon svg path {
+  fill: #32936f;
+}
+
+/* step css End */
+
+.step-screen-sec .right-side-bar {
+  width: calc(100% - 462px);
+  padding: 40px;
+}
+
+.top-step-fix-detail {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.backArrow .backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 40px;
+  border-radius: 28px;
+  border: 1px solid rgba(107, 107, 107, 0.2);
+  background: #ffffff;
+}
+
+.savetime {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 28px;
+  border: 1px solid#FFDA30;
+  background: rgb(255 218 48 / 16%);
+}
+
+.savetime button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 0;
+  max-width: 240px;
+  height: 40px;
+  padding: 0 16px;
+}
+
+.savetime span {
+  color: #232323;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.stepCounter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    107deg,
+    rgba(220, 231, 237, 0.6) -9.25%,
+    rgba(224, 206, 183, 0.6) 125.93%
+  );
+  border-radius: 28px;
+  width: 76px;
+  height: 40px;
+}
+
+.stepCounter span {
+  color: #676767;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 3.2px;
+}
+
+.stepTitle {
+  color: #232323;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.box {
+  padding: 10px;
+  border: 1px solid gray;
+}
+.right-step-detail {
+  padding: 50px 0 0;
+  width: 70%;
+}
+
+.right-step-detail .formFields {
+  padding: 45px 0 0;
+  margin: 0;
+}
+
+.right-step-detail .formFields .form-group {
+  margin-bottom: 50px;
+}
+
+.right-step-detail .formFields .form-control {
+  height: 54px;
+}
+
+.right-step-detail .formFields textarea.form-control {
+  height: auto;
+}
+
+.formFields .form-group p {
+  color: rgba(107, 107, 107, 0.6);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+  margin-top: 8px;
+}
+
+.formFields .form-group .pasteurltext {
+  display: flex;
+  gap: 5px;
+  color: #676767;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.right-step-detail .hideSelect {
+  margin-top: 24px;
+}
+
+/* Step 2 Css Start */
+
+.groupMain-threeWrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.groupMain-threeWrap .formgroup-three {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+}
+
+.groupMain-threeWrap .formgroup-three .courancy-group {
+  min-width: 128px;
+}
+
+.groupMain-threeWrap .formgroup-three .form-group-cus {
+  width: 100%;
+}
+
+.groupMain-threeWrap .two-group {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 16px;
+}
+
+.groupMain-threeWrap .two-group .form-group-cus {
+  width: calc(50% - 8px);
+}
+
+.calculatorText {
+  display: flex;
+  align-items: center;
+  color: #002dcb;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: underline;
+  gap: 5px;
+  margin-top: 15px;
+  width: fit-content;
+}
+
+.selectFieldBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.selectFieldBox li span {
+  color: #232323;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 69px;
+  height: 27px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: var(--tabs-grey, rgba(186, 186, 186, 0.2));
+  gap: 8px;
+  cursor: pointer;
+}
+
+.FieldPlaceholderWrap {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #ffffff;
+  border: 1px solid #cecccc;
+  border-radius: 8px !important;
+  padding-right: 10px;
+}
+
+.formFields .FieldPlaceholderWrap .form-control {
+  background: #ffffff;
+  border: 0px solid #cecccc;
+  height: 51px;
+}
+
+.FieldPlaceholderWrap span {
+  color: rgba(107, 107, 107, 0.6);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Step 4 css start */
+
+.radioJdCustom.ant-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.radioJdCustom .ant-radio-button-wrapper {
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid #cecccc;
+  background: #ffffff;
+  padding: 15px 24px;
+}
+
+.radioJdCustom .ant-radio-button-wrapper:hover {
+  background: #fff8d6;
+}
+
+.radioJdCustom
+  .ant-radio-button-wrapper-checked:not(
+    .ant-radio-button-wrapper-disabled
+  ):active,
+.radioJdCustom
+  .ant-radio-button-wrapper-checked:not(
+    .ant-radio-button-wrapper-disabled
+  ):first-child {
+  color: #232323;
+  border-color: #cecccc;
+}
+
+.radioJdCustom
+  .ant-radio-button-wrapper-checked:not(
+    .ant-radio-button-wrapper-disabled
+  ):hover {
+  color: #232323;
+  border-color: #cecccc;
+}
+
+.radioJdCustom
+  .ant-radio-button-wrapper-checked:not(
+    .ant-radio-button-wrapper-disabled
+  )::before,
+.radioJdCustom .ant-radio-button-wrapper:not(:first-child)::before {
+  background-color: transparent;
+}
+
+.selectJDBox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.selectJDBox .JdImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  min-width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: linear-gradient(
+    143deg,
+    rgba(220, 231, 237, 0.6) 0%,
+    rgba(224, 206, 183, 0.6) 100%
+  );
+}
+
+.selectJDBox .JdDescription h4 {
+  color: #232323;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.selectJDBox .JdDescription p {
+  color: #676767;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.personalizedJobDescription {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 30px 0 70px;
+}
+
+.personalizedJobDescription .JobRightImg {
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 200px;
+}
+
+.personalizedJobDescription .JobRightImg img {
+  width: 100%;
+}
+
+.personalizedJobDescription .JobDescription h3 {
+  color: #232323;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.personalizedJobDescription .JobDescription p {
+  color: #6b6b6b;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.customModal.personalizedJob .ant-modal-close {
+  display: none;
+}
+
+.forthStepScreen .radioJdCustom.ant-radio-group {
+  max-width: 432px;
+}
+
+.uploadLoading .ant-progress-inner {
+  width: 56px !important;
+  height: 56px !important;
+  font-size: 12px !important;
+}
+
+.uploadLoading
+  .ant-progress
+  .ant-progress-inner:not(.ant-progress-circle-gradient)
+  .ant-progress-circle-path {
+  stroke: #32936f;
+}
+
+/* Step 4 css End */
+
+/* Job Preview css start */
+
+.previewScreen {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.previewScreen .previewDeveloper {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.previewScreen .previewDeveloper h3 {
+  color: #232323;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.previewScreen .previewDeveloper h5 {
+  color: #6b6b6b;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.previewDeveloper .previewDevelopLeft {
+  width: 70%;
+}
+
+.previewScreen .form-control.ediTable {
+  background: transparent;
+  border: 1px solid #ffda30;
+  border-radius: 4px;
+  background: #f4f5f8;
+  padding: 0px 15px;
+  height: auto;
+  color: #232323;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.previewScreen .previewDevelopRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cecccc;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  justify-content: flex-end;
+  width: 30%;
+}
+
+.previewScreen .previewDevelopRight .editDevloper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  background: #fff8d6;
+  border-radius: 50%;
+}
+
+.previewstepBox {
+  border-radius: 8px;
+  background: linear-gradient(
+    142deg,
+    rgb(255 218 48 / 32%) 0%,
+    rgba(255, 227, 194, 0.32) 100%
+  );
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 18px;
+  margin: 20px 0;
+}
+
+.previewstepBox li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #232323;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: calc(33.33% - 20px);
+  padding-left: 50px;
+}
+
+.previewstepBox li:nth-child(1),
+.previewstepBox li:nth-child(4) {
+  padding-left: 0px;
+}
+
+.prevSkillTwopart {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.prevSkillTwopart p {
+  color: #232323;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.prevSkillTwopart .prevSkillLeftside {
+  border-radius: 8px;
+  border: 1px solid#F5F5F5;
+  background: rgba(255, 255, 255, 0.64);
+  width: calc(62% - 8px);
+  padding: 24px;
+}
+
+.prevSkillTwopart .prevSkillLeftside h6 {
+  color: #6b6b6b;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.prevSkillTwopart .SlillBtnBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  margin-top: 8px;
+}
+
+.prevSkillTwopart .SlillBtnBox li {
+  display: flex;
+  height: 27px;
+  padding: 6px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #fff8d6;
+  color: #232323;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.RolesResponsibilitiesDetail h5 {
+  color: #6b6b6b;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 20px;
+}
+
+.RolesResponsibilitiesDetail h5 {
+  color: #6b6b6b;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.RolesResponsibilitiesDetail .rolesText {
+  padding-left: 20px;
+}
+
+.RolesResponsibilitiesDetail .rolesText li {
+  position: relative;
+  color: #232323;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.RolesResponsibilitiesDetail .rolesText li::after {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 11px;
+  background: #232323;
+  border-radius: 50%;
+  height: 3px;
+  width: 3px;
+}
+
+.prevSkillTwopart .prevSkillRightside {
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid #f5f5f5;
+  background: rgba(255, 255, 255, 0.64);
+  width: calc(38% - 8px);
+  padding: 24px;
+}
+
+.prevSkillRightside .giveMorDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid rgba(186, 186, 186, 0.2);
+  background: rgba(103, 103, 103, 0.8);
+  backdrop-filter: blur(3.5px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: 45px;
+}
+
+.prevSkillRightside .giveMorDetail a {
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration-line: underline;
+  margin-top: 15px;
+}
+
+.prevSkillRightside .prevSkillrightDetail {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.prevSkillRightside .prevSkillrightDetail .prevSkillBox {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.prevSkillRightside .skillTitle {
+  display: inline-block;
+  color: #6b6b6b;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 5px;
+}
+
+.prevSkillRightside .prevSkillBox .Skillvalue {
+  color: #232323;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.respondQuestionsSec .respondQuestionsTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(186, 186, 186, 0.2);
+  padding: 30px 0;
+}
+
+.respondQuestionsSec .respondCollapseHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.respondQuestionsSec .respondQuestionsTitle h4 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #232323;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+
+.respondQuestionsSec .respondQuestionsTitle span {
+  color: #676767;
+  font-weight: 400;
+}
+
+.respondQuestionsSec .respondQuestionsTitle .respondArrow {
+  transition: all 0.35s ease 0s;
+}
+
+.respondQuestionsSec .respondQuestionsTitle .respondArrow.active {
+  transform: rotate(180deg);
+  transition: all 0.35s ease 0s;
+}
+
+.customModal.jobPostModal .ant-modal-content {
+  padding: 0px;
+}
+
+.customModal.jobPostModal .formFields {
+  height: 370px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 56px 30px;
+}
+
+.customModal.jobPostModal .modalContentHeading {
+  padding: 50px 70px 0 56px;
+}
+
+.buttonEditGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.buttonEditGroup .btnPrimary {
+  font-size: 14px;
+  min-height: 40px;
+  padding: 0 24px;
+}
+
+.buttonEditGroup .btnPrimary.blank {
+  background: transparent;
+  padding: 0 0px;
+}
+
+.buttonEditGroup .btnPrimary.blank:hover {
+  color: #232323;
+}
+
+.customSelectAutoField .ant-select-selection-search-input {
+  height: 52px !important;
+}
+
+/* Modal Edit Preview css start */
+
+.previewDevelopLeft .previewFieldEdit .ant-select-selection-search-input {
+  color: #232323;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.customEditorText {
+  display: none;
+}
+
+.error {
+  color: red;
+}
+
+/* TextEditor css Start */
+
+[class*="editorContainer"] {
+  /* border-radius: 8px;
+    border: 1px solid #CECCCC;
+    background: #FFF; */
+}
+
+[class*="editorContainer"] [class*="editor"] {
+  border-radius: 8px 8px 0px 0px !important;
+  border: 1px solid #cecccc !important;
+  background: #fff !important;
+  box-shadow: inherit !important;
+}
+
+[class*="editorContainer"] [class*="editorBody"] {
+  border-radius: 0px 0px 8px 8px !important;
+  border: 2px solid #ffda30 !important;
+  background: #fff;
+}
+
+/* TextEditor css End */
+
+/* TextEditor css End */
+
+.previewDevelopLeft .previewFieldEdit .ant-select-selector {
+  background-color: #f9f9f9 !important;
+}
+
+.customModal.jobPostEditModal .ant-modal-content {
+  padding: 16px 20px;
+}
+
+.customModal.jobPostEditModal .ant-modal-content .formFields {
+  margin: 0px;
+}
+
+.customModal.jobPostEditModal .ant-modal-close {
+  top: 6px;
+  inset-inline-end: 5px;
+}
+
+.customModal.jobPostEditModal .ant-modal-content .buttonEditGroup {
+  margin-top: 20px;
+}
+
+.customModal.jobPostEditModal .hideSelect {
+  margin-top: 15px;
+}
+
+.customModal.jobPostEditModal .formFields .form-control {
+  height: 40px;
+}
+
+.customModal.jobPostEditModal .ant-select .ant-select-selector {
+  height: 42px;
+  padding: 9px 16px;
+}
+
+.customModal.jobPostEditModal
+  .groupMain-threeWrap
+  .formgroup-three
+  .courancy-group {
+  min-width: 100px;
+}
+
+.customModal.jobPostEditModal .customradio label.ant-radio-button-wrapper {
+  height: 40px;
+}
+
+/* Modal Edit Preview css End */
+
+/* Term And Condition modal css Start */
+
+.customModal.TermandConditionModal .ant-modal-content {
+  padding: 0px;
+}
+
+.customModal.TermandConditionModal .modalContent {
+  padding: 56px;
+}
+
+.termConditionTopText {
+  color: #232323;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 30px;
+}
+
+.termConditionTopText h1 {
+  color: #232323;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+}
+
+.termConditionTopText span {
+  color: #6b6b6b;
+  display: block;
+  margin: 10px 0;
+}
+
+.termConditionDetail {
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.termConditionBox .termConditionLeft {
+  position: relative;
+}
+
+.termConditionBox .termConditionLeft .termCount::before {
+  content: counter(step-counter);
+  margin-right: 5px;
+  font-size: 80%;
+  background-color: rgb(0, 200, 200);
+  color: white;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.termConditionBox .termConditionRight h4 {
+  position: relative;
+  color: #232323;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+
+.termConditionBox .termConditionRight h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  min-width: 268px;
+  height: 2px;
+  background: #ffda30;
+}
+
+.termConditionBox .termConditionRight p {
+  color: #232323;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+}
+
+.termConditionBox .customCounter {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.termConditionBox .customCounter li {
+  counter-increment: step-counter;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.termConditionBox .customCounter li::before {
+  content: counter(step-counter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #232323;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.termAgreeText {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0px 0px 8px 8px;
+  box-shadow: 0px -3px 8px 0px rgba(148, 149, 153, 0.16);
+  padding: 40px 56px;
+}
+
+.termAgreeText p {
+  max-width: 65%;
+  color: #6b6b6b;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  margin: 0;
+}
+
+/* Term And Condition modal css End */
+
+.cutomeAutoCompliteArrow {
+  position: relative;
+}
+
+.downArrowCus:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  position: absolute;
+  right: 17px;
+  top: 20px;
+  display: inline-block;
+}
+
+/* Roles and responsibility css start */
+
+.RolesResponsibilitiesPart {
+  margin-top: 40px;
+  max-width: 610px;
+}
+
+.RolesResponsibilitiesPart label {
+  color: #232323;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.RolesResponsibilitiesPart .rolesBox {
+  background: #fff;
+  border: 1px solid #cecccc;
+  border-radius: 8px;
+  padding: 15px 15px 15px 30px;
+  margin-bottom: 40px;
+  max-height: 224px;
+  overflow-y: auto;
+}
+
+.RolesResponsibilitiesPart .rolesBox li {
+  position: relative;
+  color: #232323;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.RolesResponsibilitiesPart .rolesBox li::after {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 12px;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #000;
+}
+
+/* Responsive Css Start */
+
+@media only screen and (min-width: 1366px) {
+  .right-step-detail {
+    min-width: 610px;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .right-step-detail {
+    padding: 30px 0 0;
+  }
+
+  .stepTitle {
+    font-size: 20px;
+  }
+
+  .right-step-detail .formFields {
+    padding: 35px 0 0;
+  }
+
+  .right-step-detail .formFields .form-group {
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .right-step-detail .formFields .form-group {
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .right-step-detail {
+    width: 100%;
+    padding: 30px 0 0;
+  }
+
+  .thirdStepScreen .threeFieldShift .form-group.col-md-3 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .btnPrimary {
+    font-size: 16px;
+  }
+
+  .prevSkillTwopart .SlillBtnBox li {
+    height: 25px;
+    padding: 4px 8px;
+  }
+
+  .previewScreen {
+    padding-right: 0;
+  }
+
+  .step-screen-sec .sidebar {
+    display: flex;
+    max-width: 340px;
+  }
+
+  .step-screen-sec .left-side-bar {
+    width: 400px;
+    padding: 55px 20px;
+  }
+
+  .step-screen-sec .right-side-bar {
+    width: calc(100% - 400px);
+    padding: 40px 25px;
+  }
+
+  .previewstepBox {
+    gap: 15px;
+    padding: 15px 10px;
+  }
+
+  .previewstepBox li {
+    padding-left: 10px;
+    font-size: 11px;
+  }
+
+  .prevSkillRightside .giveMorDetail {
+    padding: 20px;
+  }
+
+  .previewScreen .previewDeveloper h3 {
+    font-size: 24px;
+  }
+
+  .previewDevelopLeft .previewFieldEdit .ant-select-selection-search-input {
+    font-size: 24px;
+  }
+
+  .buttonEditGroup .btnPrimary {
+    font-size: 12px;
+    min-height: 32px;
+  }
+
+  .previewDevelopLeft .previewFieldEdit .ant-select-selection-search-input {
+    height: 40px !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .stepTitle {
+    font-size: 18px;
+  }
+
+  .step-screen-sec .left-side-bar {
+    width: 370px;
+  }
+  .step-screen-sec .right-side-bar {
+    width: calc(100% - 370px);
+    padding: 40px;
+  }
+
+  .step-screen-sec .sidebar {
+    max-width: 292px;
+    left: 10px;
+  }
+
+  .thirdStepScreen .customradio.ant-radio-group {
+    flex-wrap: wrap;
+  }
+
+  .groupMain-threeWrap .formgroup-three {
+    flex-wrap: wrap;
+  }
+
+  .groupMain-threeWrap .formgroup-three .courancy-group {
+    min-width: 100%;
+  }
+
+  .thirdStepScreen .threeFieldShift .form-group.col-md-6,
+  .thirdStepScreen .threeFieldShift .form-group.col-md-3 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .radioJdCustom .ant-radio-button-wrapper {
+    padding: 12px 12px;
+  }
+
+  .selectJDBox .JdImage {
+    width: 45px;
+    min-width: 45px;
+    height: 45px;
+  }
+
+  .selectJDBox {
+    gap: 10px;
+  }
+
+  .selectJDBox .JdDescription h4 {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .radioJdCustom.ant-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .step-screen-sec .sidebar .logo {
+    width: 108px;
+    margin-bottom: 20px;
+  }
+
+  .top-step-fix-detail {
+    gap: 10px;
+  }
+
+  .sign-up-main.loginScreenSec .registerLink {
+    font-size: 16px;
+  }
+
+  .backArrow .backButton {
+    width: 50px;
+    height: 34px;
+  }
+
+  .stepCounter {
+    width: 60px;
+    height: 34px;
+  }
+
+  .stepCounter span {
+    font-size: 14px;
+  }
+
+  .FieldPlaceholderWrap span {
+    font-size: 12px;
+  }
+
+  .personalizedJobDescription {
+    padding: 30px 150px 70px 0px;
+  }
+
+  /* preview css start */
+
+  .previewScreen .previewDeveloper {
+    margin-top: 40px;
+  }
+
+  .prevSkillTwopart .prevSkillLeftside {
+    width: 100%;
+  }
+
+  .prevSkillTwopart .prevSkillRightside {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .step-screen-sec .left-side-bar {
+    position: relative;
+    padding: 40px 15px;
+  }
+
+  .step-screen-sec .sidebar {
+    left: 0;
+  }
+
+  .step-screen-sec .sidebar .logo {
+    width: 90px;
+    margin-bottom: 16px;
+    margin-top: 10px;
+  }
+
+  .step-screen-sec .right-side-bar {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .right-step-detail {
+    padding: 20px 0 0;
+  }
+
+  .stepTitle {
+    font-size: 22px;
+  }
+
+  .right-step-detail .formFields {
+    padding: 10px 0 0;
+  }
+
+  .sidebarButtonMobShow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .sidebarButtonMobShow .savetime,
+  .sidebarButtonMobShow .btnPrimary {
+    width: 100%;
+  }
+
+  .top-step-fix-detail {
+    display: none;
+  }
+
+  .logoutBtn {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .right-step-detail .formFields .form-group {
+    margin-bottom: 16px;
+  }
+
+  .selectJDBox .JdDescription h4 {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .selectJDBox .JdDescription p {
+    font-size: 10px;
+  }
+
+  .step-screen-sec .sidebar {
+    max-width: 100%;
+  }
+
+  .step-screen-sec .left-side-bar {
+    width: 100%;
+  }
+
+  .step-screen-sec {
+    background: #ffffff;
+    min-height: 100%;
+  }
+
+  .ant-select-show-search.ant-select-multiple .ant-select-selector {
+    min-height: 40px;
+  }
+
+  .personalizedJobDescription .JobDescriptionImg img {
+    width: 30px;
+  }
+
+  .personalizedJobDescription {
+    padding: 180px 40px 0px 0px;
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+  .personalizedJobDescription .JobDescription h3 {
+    font-size: 16px;
+  }
+  .personalizedJobDescription .JobRightImg {
+    top: 15px;
+    transform: inherit;
+  }
+
+  /* lets bigin class added css start */
+
+  .left-side-bar.isBegin {
+    width: 100%;
+    padding: 16px 16px 0;
+  }
+
+  .right-side-bar {
+    display: none;
+  }
+
+  .right-side-bar.isBegin {
+    display: block;
+  }
+
+  .left-side-bar.isBegin
+    .ant-steps.ant-steps-vertical.step-custom
+    .ant-steps-item-content {
+    display: none;
+  }
+
+  .left-side-bar.isBegin .ant-steps.ant-steps-vertical.step-custom {
+    flex-direction: row;
+  }
+
+  .left-side-bar.isBegin
+    .ant-steps.ant-steps-vertical
+    > .ant-steps-item
+    > .ant-steps-item-container
+    > .ant-steps-item-tail {
+    top: 10px;
+    width: 100%;
+    height: 1px;
+  }
+
+  .left-side-bar.isBegin
+    .ant-steps.ant-steps-vertical
+    > .ant-steps-item
+    > .ant-steps-item-container
+    > .ant-steps-item-tail::after {
+    width: 100%;
+    height: 1px;
+    top: -3px;
+    position: relative;
+    z-index: -1;
+  }
+
+  .left-side-bar.isBegin
+    .ant-steps
+    .ant-steps-item-finish
+    > .ant-steps-item-container
+    > .ant-steps-item-tail:after {
+    width: 100% !important;
+    height: 1px !important;
+  }
+
+  .left-side-bar.isBegin .sidebar {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    background: transparent;
+    box-shadow: inherit;
+    padding: 0px;
+    backdrop-filter: inherit;
+  }
+
+  .left-side-bar.isBegin .right-step-detail {
+    padding: 0;
+  }
+
+  .left-side-bar.isBegin .step-custom .ant-steps-item {
+    padding: 15px 0 0;
+  }
+
+  .left-side-bar.isBegin
+    .ant-steps
+    .ant-steps-item-process
+    .ant-steps-item-icon {
+    background-color: #ffda30;
+    border-color: #ffda30;
+  }
+
+  .left-side-bar.isBegin
+    .ant-steps
+    .ant-steps-item-finish
+    .ant-steps-item-icon {
+    background-color: #ffda30;
+    border-color: #ffda30;
+  }
+
+  .left-side-bar.isBegin
+    .ant-steps
+    .ant-steps-item-finish
+    .ant-steps-icon
+    svg
+    path {
+    fill: #000000;
+  }
+
+  .left-side-bar.isBegin .ant-steps .ant-steps-item-wait .ant-steps-item-icon {
+    /* position: relative;
+        z-index: 44; */
+    background-color: rgb(234 234 234);
+  }
+
+  .step-screen-sec .left-side-bar.isBegin:after {
+    content: none;
+  }
+
+  .left-side-bar.isBegin .mobileContentHide {
+    display: none;
+  }
+
+  .termConditionTopText {
+    margin-bottom: 15px;
+  }
+
+  .prevSkillTwopart .prevSkillLeftside {
+    width: 100%;
+  }
+
+  .prevSkillTwopart .prevSkillRightside {
+    width: 100%;
+    background: linear-gradient(
+      139deg,
+      rgb(255 218 48 / 32%) -17.66%,
+      rgba(255, 227, 194, 0) 124.58%
+    );
+    padding: 12px;
+  }
+
+  .previewScreen .previewDeveloper h3 {
+    font-size: 22px;
+  }
+
+  .downArrowCus:after {
+    top: 15px;
+  }
+
+  .right-step-detail .formFields .form-control {
+    height: 40px;
+  }
+
+  .customModal.TermandConditionModal .modalContent {
+    padding: 30px 10px;
+  }
+
+  .termConditionTopText h1 {
+    font-size: 20px;
+  }
+
+  .termConditionBox .customCounter li {
+    margin-bottom: 15px;
+  }
+
+  .termConditionBox .customCounter li::before {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .termAgreeText {
+    padding: 10px 8px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .termAgreeText p {
+    max-width: 100%;
+  }
+
+  /* preview page Responsive css */
+
+  .previewScreen .previewDeveloper {
+    flex-direction: column-reverse;
+    width: 100%;
+    gap: 20px;
+    margin-top: 18px;
+  }
+
+  .previewDeveloper .previewDevelopLeft {
+    width: 100%;
+  }
+
+  .previewScreen .previewDevelopRight {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .previewScreen .previewDeveloper {
+    margin-top: 20px;
+  }
+
+  .previewstepBox {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .previewstepBox li {
+    font-size: 10px;
+    width: calc(50% - 4px);
+    padding-left: 0px;
+  }
+
+  .customModal.jobPostModal .modalContentHeading {
+    padding: 25px 20px 0 16px;
+  }
+
+  .customModal.jobPostModal .modalContentHeading h1 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .customModal.jobPostModal .formFields {
+    padding: 0 16px 20px;
+  }
+
+  .respondQuestionsSec .respondQuestionsTitle h4 {
+    font-size: 14px;
+  }
+
+  .prevSkillTwopart .prevSkillLeftside {
+    border: none;
+    padding: 0;
+  }
+
+  .RolesResponsibilitiesDetail h5 {
+    font-size: 12px;
+  }
+
+  .prevSkillRightside .skillTitle {
+    color: #232323;
+    font-weight: 600;
+  }
+
+  .previewDevelopLeft .previewFieldEdit .ant-select-selection-search-input {
+    font-size: 22px;
+  }
+
+  .form-group.previewJobBtn {
+    margin-top: 20px;
+  }
+
+  .ImageDragdropCustom .ant-upload-drag-container .uploadFirstscreen {
+    display: flex;
+    gap: 12px;
+  }
+
+  .ImageDragdropCustom .ant-upload.ant-upload-btn {
+    padding: 16px 16px;
+  }
+
+  .uploadFirstscreen .antUploadTextWrap {
+    text-align: left;
+  }
+
+  .ImageDragdropCustom .fileUpload {
+    margin: 0;
+  }
+
+  .ImageDragdropCustom
+    .uploadFirstscreen
+    .antUploadTextWrap
+    .clickUploadMobNone {
+    display: none;
+  }
+
+  .left-side-bar.isBegin.previewIn {
+  }
+
+  .left-side-bar.isBegin.previewIn .ant-steps.ant-steps-vertical.step-custom {
+    display: none;
+  }
+
+  .ant-select .ant-select-selector .ant-select-selection-item img {
+    margin-right: 2px;
+  }
+
+  .previewScreen .form-group.mobileMarginNone {
+    margin-bottom: 0px;
+  }
+
+  /* jobpreview Edit modal css */
+
+  .customModal.jobPostEditModal .buttonEditGroup {
+    flex-wrap: nowrap;
+  }
+
+  .customModal.jobPostEditModal .formFields .form-group .btnPrimary {
+    width: auto;
+  }
+
+  .previewScreen .buttonEditGroup {
+    gap: 8px;
+  }
+
+  .previewScreen .buttonEditGroup .btnPrimary.blank {
+    position: relative;
+    text-decoration: none;
+    color: #cecccc;
+    font-weight: 500;
+    border-radius: 0px;
+    padding-right: 8px;
+  }
+
+  .previewScreen .buttonEditGroup .btnPrimary.blank::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 8px;
+    background: #000;
+    width: 1px;
+    height: 10px;
+  }
+
+  .previewScreen .buttonEditGroup .btnPrimary {
+    color: #232323;
+    font-size: 12px;
+    min-height: 26px;
+    text-decoration: underline;
+    padding: 0;
+    background: transparent;
+    font-weight: 500;
+  }
+
+  [class*="editorContainer"] [class*="editorBody"] {
+    border: 0px solid #ffda30 !important;
+    background: #f4f5f8 !important;
+  }
+
+  .textEditor_commentBox__nWyG3 {
+    padding: 8px 8px !important;
+    width: 100% !important;
+  }
+
+  .customModal.jobPostEditModal
+    .groupMain-threeWrap
+    .formgroup-three
+    .courancy-group {
+    min-width: 100%;
+  }
+
+  .RolesResponsibilitiesPart .rolesBox {
+    margin-bottom: 16px;
+  }
+
+  .customModal.jobPostEditModal .buttonEditGroup {
+    gap: 10px;
+  }
+
+  .customModal.jobPostEditModal .buttonEditGroup .btnPrimary {
+    font-size: 12px;
+    min-height: 30px;
+  }
+
+  .uploadLoading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  .groupMain-threeWrap .formgroup-three {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .groupMain-threeWrap .formgroup-three .courancy-group {
+    min-width: 100%;
+  }
+
+  .groupMain-threeWrap .two-group .form-group-cus {
+    width: 100%;
+  }
+
+  .formFields .form-group .btnPrimary {
+    width: 100%;
+  }
+
+  .customModal.jobPostEditModal .customradio label.ant-radio-button-wrapper {
+    padding-inline: 7px;
+  }
+
+  .RolesResponsibilitiesPart .btnPrimary {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 467px) {
+}

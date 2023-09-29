@@ -1,0 +1,137 @@
+.loginWrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.loginWrapper:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(354deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+  width: 100%;
+  height: 100%;
+}
+
+.loginWrapper .bgImg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+}
+
+.loginWrapperInner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  z-index: 4;
+  gap: 40px;
+  padding: 80px 20px 80px;
+}
+
+.loginBox {
+  position: relative;
+  border-radius: 20px;
+  background: rgb(143 143 143 / 90%);
+  mix-blend-mode: overlay;
+  padding: 30px 16px;
+  width: 100%;
+}
+
+.loginBox::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(/src/assets/images/loginBgShap.png);
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.loginBox h4 {
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 24px;
+}
+
+.forgotpassRememberWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.forgotpassRememberWrap a {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.forgotpassRememberWrap a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background: #ffda30;
+}
+
+.forgotpassRememberWrap label {
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* Development Css start */
+
+.iconWrap .iconImg {
+  color: #fff;
+}
+
+/* Development Css End */
+
+/* responsive css start */
+
+@media only screen and (min-width: 600px) {
+  .loginBox {
+    max-width: 400px;
+  }
+
+  .loginWrapperInner {
+    padding: 60px 20px 60px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .loginBox {
+    padding: 20px 16px;
+  }
+  .loginBox h4 {
+    font-size: 18px;
+  }
+  .forgotpassRememberWrap a {
+    font-size: 12px;
+  }
+  .forgotpassRememberWrap label {
+    font-size: 12px;
+  }
+}
