@@ -13,3 +13,16 @@ export const signInRequest = async (userReqData) => {
     return error;
   }
 }
+
+export const LogOut = async () => {
+  try {
+    let httpService = new HttpServices();
+    httpService.URL = NetworkInfo.NETWORK + SubDomain.USEROPERTIONAPI + UserAPI.LOGOUT + `?token=${localStorage.getItem('Token')}`;
+    httpService.setAuthRequired = true;
+    httpService.setAuthToken = localStorage.getItem('Token');
+    let response = await httpService.sendGetRequest();
+    return response
+  } catch (error) {
+    return error
+  }
+}

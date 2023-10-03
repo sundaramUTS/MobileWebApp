@@ -17,4 +17,5 @@ export class MethodType {
 
 export class UserAPI {
 	static LOGIN = '/AdminLogin';
+	static LOGOUT = '/LogOut';
 }

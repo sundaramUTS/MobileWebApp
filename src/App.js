@@ -2,7 +2,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import SignIn from './components/Signin/SignIn';
+import SignIn from './components/SignIn/SignIn';
 import ChatListing from './components/ChatListing/ChatListing';
 import "./assets/css/common.css";
 import "./assets/css/style.css";
@@ -23,15 +23,15 @@ const PublicRoute = ({ Component }) => {
 };
 
 const PrivateRoute = ({ Component }) => {
-  return isAuthenticated() ? <Component /> : <Navigate to="/login" />;
+  return isAuthenticated() ? <Component /> : <Navigate to="/" />;
 };
 
-function App() {
+const App = () => {
   return (
     <Routes>
       <Route path="/" element={<PublicRoute Component={SignIn} />} />
-      <Route path="/login" element={<PublicRoute Component={SignIn} />} />
       <Route path='/chat-listing' element={<PrivateRoute Component={ChatListing} />} />
+      <Route path='*' element={<PrivateRoute Component={SignIn} />} />
     </Routes>
   );
 }

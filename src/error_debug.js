@@ -1,4 +1,4 @@
-export function errorDebug(error, identityCode) {
+export const errorDebug = (error, identityCode) => {
 	let err = new Error();
 	const message = `
         Identity Code  📢 :: ${identityCode}
