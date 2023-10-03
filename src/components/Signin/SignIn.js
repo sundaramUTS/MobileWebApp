@@ -53,9 +53,10 @@ const SignIn = () => {
             if (state?.data?.responseBody?.details?.EmployeeID) {
                 setErrors({ ...errors, ['other']: "" });
                 localStorage.setItem("EmployeeID", state.data.responseBody.details.EmployeeID)
+                localStorage.setItem("FullName", state.data.responseBody.details.FullName)
                 localStorage.setItem("Token", state.data.responseBody.details.Token);
                 setTimeout(() => {
-                    navigate("/chat-listing");
+                    navigate("/channel-listing");
                 }, 2000);
             } else {
                 navigate("/");

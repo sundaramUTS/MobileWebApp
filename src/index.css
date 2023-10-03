@@ -1,16 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   overflow-y: auto;
   overflow-x: hidden;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 ::selection {
   color: black;
@@ -28,57 +26,143 @@ body {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 5px !important;
-  background:#ffda31;
+  background: #ffda31;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background:#ffda31;
+  background: #ffda31;
 }
 
-
-ol, ul, dl{
+ol,
+ul,
+dl {
   padding: 0;
   margin: 0;
 }
 
-li{
+li {
   list-style: none;
 }
 
-div,h1,h2,h3,h4,h5,h6,button,a,span,p,ul,li,input, button, select, optgroup, textarea{
-  font-family: 'Montserrat', sans-serif !important;
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+a,
+span,
+p,
+ul,
+li,
+input,
+button,
+select,
+optgroup,
+textarea {
+  font-family: "Montserrat", sans-serif !important;
 }
 
 code {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 [type="button"]:not(:disabled),
 [type="reset"]:not(:disabled),
 [type="submit"]:not(:disabled),
 button:not(:disabled) {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.row{
+.row {
   margin-right: -8px !important;
   margin-left: -8px !important;
 }
 
-.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto{
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12,
+.col,
+.col-auto,
+.col-sm-1,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm,
+.col-sm-auto,
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md,
+.col-md-auto,
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg,
+.col-lg-auto,
+.col-xl-1,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12,
+.col-xl,
+.col-xl-auto {
   padding-right: 8px !important;
   padding-left: 8px !important;
 }
 
-
 /* Comman css start */
 
-.formFields{
+.formFields {
   margin-top: 20px;
 }
 
-.formFields .label{
-  font-family: 'Montserrat';
+.formFields .label {
+  font-family: "Montserrat";
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
@@ -86,8 +170,8 @@ button:not(:disabled) {
   margin-bottom: 8px;
 }
 
-.formFields .label.error{
-  color: #E03A3A;
+.formFields .label.error {
+  color: #e03a3a;
   margin: 0 0 8px;
 }
 
@@ -98,8 +182,8 @@ button:not(:disabled) {
   margin-bottom: 40px;
 }
 
-.formFields .linkContainer .loginlink{
-  font-family: 'Montserrat';
+.formFields .linkContainer .loginlink {
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-size: 14px !important;
@@ -109,39 +193,38 @@ button:not(:disabled) {
   cursor: pointer;
 }
 
-.formFields .form-group{
+.formFields .form-group {
   margin-bottom: 24px;
 }
 
-.formFields .form-control{
-  background: #FFFFFF;
-  border: 1px solid #CECCCC;
+.formFields .form-control {
+  background: #ffffff;
+  border: 1px solid #cecccc;
   border-radius: 8px !important;
   padding: 12px 16px;
-  font-family: 'Montserrat';
-  color:#232323;
+  font-family: "Montserrat";
+  color: #232323;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   height: 48px;
-  
 }
 
-.formFields .form-control:focus{
+.formFields .form-control:focus {
   box-shadow: inherit;
 }
 
-.formFields .form-control::-webkit-input-placeholder { 
-  color:rgba(107, 107, 107, 0.60);
+.formFields .form-control::-webkit-input-placeholder {
+  color: rgba(107, 107, 107, 0.6);
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
 
-.formFields .form-control:-ms-input-placeholder { 
-  color:rgba(107, 107, 107, 0.60);
+.formFields .form-control:-ms-input-placeholder {
+  color: rgba(107, 107, 107, 0.6);
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -149,42 +232,40 @@ button:not(:disabled) {
 }
 
 .formFields .form-control::placeholder {
-  color:rgba(107, 107, 107, 0.60);
+  color: rgba(107, 107, 107, 0.6);
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
 
-.formFields textarea.form-control{
-    height: auto;
+.formFields textarea.form-control {
+  height: auto;
 }
 
-
-.formFields .label-input{
+.formFields .label-input {
   display: flex;
-  flex-direction: column ;
+  flex-direction: column;
   padding: 1rem;
 }
 
-.formFields .form-group label{
-  color:#676767;
+.formFields .form-group label {
+  color: #676767;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
 
-.formFields .form-group label span{
-   font-weight: 700;
+.formFields .form-group label span {
+  font-weight: 700;
 }
 
-
-button:focus{
+button:focus {
   outline: 0 !important;
 }
 
-.btnSecondary{
+.btnSecondary {
   display: flex;
   /* width: 122px; */
   height: 46px;
@@ -193,9 +274,9 @@ button:focus{
   align-items: center;
   gap: 10px;
   border-radius: 27px;
-  border: 1px solid rgba(107, 107, 107, 0.60);
-  background:#FFF;
-  color:#232323;
+  border: 1px solid rgba(107, 107, 107, 0.6);
+  background: #fff;
+  color: #232323;
   text-align: center;
   font-size: 14px;
   font-style: normal;
@@ -205,27 +286,25 @@ button:focus{
   transition: 0.5s all;
 }
 
-.btnSecondary:hover{
+.btnSecondary:hover {
   background: #ffda30;
   border: 1px solid #ffda30;
   color: #000;
 }
 
-
-
-.btnPrimary { 
+.btnPrimary {
   color: #232323;
   font-style: normal;
   line-height: normal;
   font-weight: 700;
   text-transform: uppercase;
   border: 0;
-  transition: 0.5s all; 
-  background: #FFDA30;
+  transition: 0.5s all;
+  background: #ffda30;
   padding: 0 25px;
   font-size: 18px;
   display: inline-block;
-  text-align: center; 
+  text-align: center;
   min-height: 46px;
   /* line-height: 46px; */
   border-radius: 27px;
@@ -234,93 +313,85 @@ button:focus{
   z-index: 2;
 }
 
-.btnPrimary:hover{
+.btnPrimary:hover {
   color: rgb(255, 255, 255);
   background: rgb(0, 0, 0);
 }
 
-
-.btnPrimary.Btnsmall{
+.btnPrimary.Btnsmall {
   font-size: 14px;
   min-height: 37px;
 }
 
-.btnSecondary.Btnsmall{
+.btnSecondary.Btnsmall {
   font-size: 10px;
   min-height: 28px;
   height: 28px;
   background: transparent;
 }
 
-.btnSecondary.Btnsmall:hover{
+.btnSecondary.Btnsmall:hover {
   background: #ffda30;
   border: 1px solid #ffda30;
   color: #000;
 }
 
-
-
-.fieldiconLeftwrap{
+.fieldiconLeftwrap {
   position: relative;
 }
 
-.fieldiconLeftwrap .iconField{
+.fieldiconLeftwrap .iconField {
   position: absolute;
   left: 15px;
   top: 47%;
   transform: translateY(-50%);
 }
 
-.formFields .fieldiconLeftwrap .form-control{
+.formFields .fieldiconLeftwrap .form-control {
   padding-left: 38px;
 }
 
-.formFields .form-control:focus{
+.formFields .form-control:focus {
   border: 1px solid #ffda30;
 }
 
-
 /* Error Msg css start */
 
-.formFields .form-control.error{
-  border-color: #E03A3A;
+.formFields .form-control.error {
+  border-color: #e03a3a;
   margin: 0;
 }
 
-.formFields .error{
-  color: #E03A3A;
+.formFields .error {
+  color: #e03a3a;
 }
 
-.formFields span.error{
-  color:#E03A3A;
+.formFields span.error {
+  color: #e03a3a;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-.formFields .form-group.error .form-control{
-  border: 1px solid #E03A3A;
+.formFields .form-group.error .form-control {
+  border: 1px solid #e03a3a;
 }
 
-.formFields .form-group.error label{
-    color: #E03A3A;
+.formFields .form-group.error label {
+  color: #e03a3a;
 }
 
 /* Error Msg css End */
 
-
-.subTitle{
-  color:#232323;
+.subTitle {
+  color: #232323;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   margin: 0;
 }
-
-
-
 
 /* Custom Select css */
 
@@ -368,7 +439,7 @@ button:focus{
 .selDropdowncustom.ant-select-dropdown{
   padding: 0px;
   border-radius: 0 0 8px 8px;
-  /* inset: 768px auto auto 502px !important; 
+  /* inset: 768px auto auto 502px !important;
   box-shadow: inherit;
   border: 1px solid #CECCCC;
 } */
@@ -377,8 +448,6 @@ button:focus{
   border-radius: 8px 8px 0 0 !important;
   border-bottom: 0px;
 } */
-
-
 
 /*Select*/
 
@@ -401,7 +470,9 @@ button:focus{
   transition: all 0.25s ease 0s;
 }
 
-.ant-select.ant-select-single .ant-select-selector .ant-select-selection-placeholder{
+.ant-select.ant-select-single
+  .ant-select-selector
+  .ant-select-selection-placeholder {
   line-height: initial !important;
 }
 
@@ -421,14 +492,18 @@ button:focus{
   border-color: #cecccc;
 }
 
-.ant-select-focused:not(.ant-select-disabled).ant-select:not( .ant-select-customize-input ) .ant-select-selector, .ant-select:hover .ant-select-selector {
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(
+    .ant-select-customize-input
+  )
+  .ant-select-selector,
+.ant-select:hover .ant-select-selector {
   border-color: #ffda30 !important;
   box-shadow: 0 0 0 1px #ffda30 !important;
 }
 
-.form-group.error .ant-select .ant-select-selector{
-  border-color: #E03A3A !important;
-} 
+.form-group.error .ant-select .ant-select-selector {
+  border-color: #e03a3a !important;
+}
 
 .ant-select .ant-select-arrow {
   right: 16px;
@@ -494,13 +569,9 @@ button:focus{
   font-weight: 500;
 }
 
-
-.ant-select-single .ant-select-selector .ant-select-selection-search-input{
+.ant-select-single .ant-select-selector .ant-select-selection-search-input {
   height: 50px !important;
 }
-
-
-
 
 /* Multiple Select css start */
 
@@ -528,7 +599,7 @@ button:focus{
   position: relative;
   padding: 6px 28px 6px 14px;
   border-radius: 8px;
-  background: #FFF8D6;
+  background: #fff8d6;
   display: inline-flex;
   height: auto;
   border: none;
@@ -579,23 +650,21 @@ button:focus{
 
 /* Multiple Select css start */
 
-
 /* Custom Select css End*/
-
 
 /* Modal css start */
 
 .customModal {
   border-radius: 8px;
   border: 1px dashed#FFDA30;
-  background: #FFF;
+  background: #fff;
 }
 
-.customModal .ant-modal-content{
-  padding:56px;
+.customModal .ant-modal-content {
+  padding: 56px;
 }
 
-.customModal h1{
+.customModal h1 {
   display: inline-block;
   color: #232323;
   font-size: 24px;
@@ -605,11 +674,11 @@ button:focus{
   margin-bottom: 15px;
 }
 
-.customModal .ant-modal-footer{
+.customModal .ant-modal-footer {
   display: none;
 }
 
-.customModal .formFields{
+.customModal .formFields {
   padding: 0px;
 }
 
@@ -617,36 +686,35 @@ button:focus{
   margin-bottom: 30px;
 }
 
-.customModal.ant-modal .ant-modal-close:hover{
+.customModal.ant-modal .ant-modal-close:hover {
   background-color: transparent;
 }
 
-.customModal.ant-modal .ant-modal-close svg path{
+.customModal.ant-modal .ant-modal-close svg path {
   fill: #676767;
   transition: 0.5s all;
 }
 
-.customModal.ant-modal .ant-modal-close:hover svg path{
+.customModal.ant-modal .ant-modal-close:hover svg path {
   fill: #000;
 }
 
-
 /* Custom Radio css */
 
-.customradio.ant-radio-group{
+.customradio.ant-radio-group {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.customradio label.ant-radio-button-wrapper{
+.customradio label.ant-radio-button-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-   border: 1px solid#CECCCC; 
+  border: 1px solid#CECCCC;
   /* border-color: #CECCCC; */
-  background: #FFF; 
+  background: #fff;
   height: 44px;
 
   color: #000 !important;
@@ -657,64 +725,79 @@ button:focus{
   letter-spacing: -0.32px;
 }
 
-.customradio .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before{
+.customradio
+  .ant-radio-button-wrapper-checked:not(
+    .ant-radio-button-wrapper-disabled
+  )::before {
   background-color: transparent;
 }
 
-.customradio .ant-radio-button-wrapper:not(:first-child)::before{
+.customradio .ant-radio-button-wrapper:not(:first-child)::before {
   background-color: transparent;
 }
 
-.customradio .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled){
-  border-color: #32936F;
+.customradio
+  .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  border-color: #32936f;
   /* border: 2px solid #32936F; */
-  box-shadow: 0px 0px 1px 1px #32936F;
-  background: #DDF6ED;
+  box-shadow: 0px 0px 1px 1px #32936f;
+  background: #ddf6ed;
 }
 
-.customradio .ant-radio-button-wrapper:not(:first-child)::before{
+.customradio .ant-radio-button-wrapper:not(:first-child)::before {
   background-color: transparent;
 }
 
-.customradio .ant-radio-button-wrapper.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):active, 
-.customradio .ant-radio-button-wrapper.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover,
-.customradio .ant-radio-button-wrapper.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):first-child{
+.customradio
+  .ant-radio-button-wrapper.ant-radio-button-wrapper-checked:not(
+    .ant-radio-button-wrapper-disabled
+  ):active,
+.customradio
+  .ant-radio-button-wrapper.ant-radio-button-wrapper-checked:not(
+    .ant-radio-button-wrapper-disabled
+  ):hover,
+.customradio
+  .ant-radio-button-wrapper.ant-radio-button-wrapper-checked:not(
+    .ant-radio-button-wrapper-disabled
+  ):first-child {
   border-radius: 8px;
   /* border: 2px solid var(--selection-stroke-green, #32936F); */
-  box-shadow: 0px 0px 1px 1px #32936F;
-  background: var(--selection-light-green, #DDF6ED);
+  box-shadow: 0px 0px 1px 1px #32936f;
+  background: var(--selection-light-green, #ddf6ed);
   color: #000;
 }
 
-.customradio label.ant-radio-button-wrapper span{
-    font-weight: 400;
+.customradio label.ant-radio-button-wrapper span {
+  font-weight: 400;
 }
 
 /* Custom Radio css End*/
 
-
-
 /* Image Drag Drop */
 
-.ImageDragdropCustom .ant-upload-drag{
+.ImageDragdropCustom .ant-upload-drag {
   border-radius: 8px;
-  border: 1px dashed #CECCCC;
-  background: #FFF;
+  border: 1px dashed #cecccc;
+  background: #fff;
 }
 
-.ImageDragdropCustom .fileUpload{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    min-width: 40px;
-    height: 40px;
-    background: linear-gradient(107deg, rgba(220, 231, 237, 0.60) -9.25%, rgba(224, 206, 183, 0.60) 125.93%);
-    border-radius: 50%;
-    margin: 0 auto 10px;
+.ImageDragdropCustom .fileUpload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  background: linear-gradient(
+    107deg,
+    rgba(220, 231, 237, 0.6) -9.25%,
+    rgba(224, 206, 183, 0.6) 125.93%
+  );
+  border-radius: 50%;
+  margin: 0 auto 10px;
 }
 
-.ImageDragdropCustom .ant-upload-text{
+.ImageDragdropCustom .ant-upload-text {
   color: #232323;
   font-size: 14px;
   font-style: normal;
@@ -722,35 +805,35 @@ button:focus{
   line-height: normal;
 }
 
-.ImageDragdropCustom .ant-upload-text .clickUploadText{
-  color: #002DCB;
+.ImageDragdropCustom .ant-upload-text .clickUploadText {
+  color: #002dcb;
 }
 
-.ImageDragdropCustom .ant-upload-hint{
-    color: #676767;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+.ImageDragdropCustom .ant-upload-hint {
+  color: #676767;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
-.ImageDragdropCustom .ant-upload-list{
+.ImageDragdropCustom .ant-upload-list {
   display: none;
 }
 
-.UploadPreviewBox{
+.UploadPreviewBox {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 13px;
   border-radius: 8px;
-  border: 1px solid #CECCCC;
-  background: #FFFFFF;
+  border: 1px solid #cecccc;
+  background: #ffffff;
   padding: 15px;
   margin-top: 15px;
 }
 
-.UploadPreviewBox .UploadPreviewImg{
+.UploadPreviewBox .UploadPreviewImg {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -758,11 +841,11 @@ button:focus{
   min-width: 32px;
   height: 32px;
   border-radius: 4px;
-  border: 1px solid #CECCCC;
-  background: #FFF;
+  border: 1px solid #cecccc;
+  background: #fff;
 }
 
-.UploadPreviewBox .UploadPreviewDetail h5{
+.UploadPreviewBox .UploadPreviewDetail h5 {
   color: #232323;
   font-size: 14px;
   font-style: normal;
@@ -771,8 +854,8 @@ button:focus{
   margin: 0;
 }
 
-.UploadPreviewBox .UploadPreviewDetail h6{
-  color:#676767;
+.UploadPreviewBox .UploadPreviewDetail h6 {
+  color: #676767;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -780,20 +863,19 @@ button:focus{
   margin: 0;
 }
 
-.UploadPreviewLeft{
-    display: flex;
-    gap: 12px;
+.UploadPreviewLeft {
+  display: flex;
+  gap: 12px;
 }
 
-
-.UploadPreviewRight{
+.UploadPreviewRight {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.UploadPreviewRight h4{
-  color:rgba(107, 107, 107, 0.60);
+.UploadPreviewRight h4 {
+  color: rgba(107, 107, 107, 0.6);
   font-size: 11px;
   font-style: italic;
   font-weight: 500;
@@ -801,102 +883,104 @@ button:focus{
   margin: 0;
 }
 
-.uploadLoading a{
-  color: #002DCB;
+.uploadLoading a {
+  color: #002dcb;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
 
-.uploadLoading a:focus, .uploadLoading a:hover{
+.uploadLoading a:focus,
+.uploadLoading a:hover {
   text-decoration: none;
 }
 
-.uploadLoading .ant-upload-text{
+.uploadLoading .ant-upload-text {
   margin-bottom: 5px;
 }
 
-.uploadFaild, .uploadsuccess{
+.uploadFaild,
+.uploadsuccess {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.UploadPreviewRight span{
+.UploadPreviewRight span {
   font-size: 14px;
 }
 
-.UploadPreviewRight .refreshBtn{
+.UploadPreviewRight .refreshBtn {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 1px solid #E8E8E8;
+  border: 1px solid #e8e8e8;
 }
 
-.UploadPreviewRight .refreshBtn svg path{
+.UploadPreviewRight .refreshBtn svg path {
   fill: #232323;
 }
 
-.UploadPreviewRight .deleteBtn{
+.UploadPreviewRight .deleteBtn {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 1px solid #E8E8E8;
+  border: 1px solid #e8e8e8;
 }
 
-.UploadPreviewRight .deleteBtn svg path{
+.UploadPreviewRight .deleteBtn svg path {
   fill: #232323;
 }
 
-.UploadPreviewRight .closeBtn{
+.UploadPreviewRight .closeBtn {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: rgba(228, 26, 28, 0.10);
+  background: rgba(228, 26, 28, 0.1);
 }
 
-.UploadPreviewRight .closeBtn svg path{
-  stroke: #E41A1C;
+.UploadPreviewRight .closeBtn svg path {
+  stroke: #e41a1c;
 }
 
-.UploadPreviewRight .checkBtn{
+.UploadPreviewRight .checkBtn {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: rgba(50, 147, 111, 0.10);
+  background: rgba(50, 147, 111, 0.1);
 }
 
-.UploadPreviewRight .checkBtn svg path{
-  fill: #32936F;
+.UploadPreviewRight .checkBtn svg path {
+  fill: #32936f;
 }
 
-.progressUpload{
+.progressUpload {
   margin-bottom: 10px;
 }
 
-.progressUpload .ant-progress.ant-progress-circle .ant-progress-inner{
+.progressUpload .ant-progress.ant-progress-circle .ant-progress-inner {
   width: 56px !important;
   height: 56px !important;
 }
 
-.progressUpload .ant-progress-inner .ant-progress-circle-path{
-  stroke: #32936F !important;
+.progressUpload .ant-progress-inner .ant-progress-circle-path {
+  stroke: #32936f !important;
 }
 
-.progressUpload .ant-progress-inner .ant-progress-text{
+.progressUpload .ant-progress-inner .ant-progress-text {
   color: #232323;
   font-size: 12px;
   font-style: normal;
@@ -904,7 +988,7 @@ button:focus{
   line-height: normal;
 }
 
-.ant-space{
+/* .ant-space{
   position: fixed;
   left: 0;
   top: 0;
@@ -919,10 +1003,9 @@ button:focus{
 
 .ant-spin .ant-spin-dot-item{
   background-color: #fff;
-}
+} */
 
-
-.btnWithSpinLoader{
+.btnWithSpinLoader {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -932,11 +1015,9 @@ button:focus{
   background-color: #000;
 }
 
-
 /* Resposnive Css start */
 
 @media only screen and (max-width: 1366px) {
- 
 }
 
 @media only screen and (max-width: 1280px) {
@@ -946,19 +1027,18 @@ button:focus{
 }
 
 @media only screen and (max-width: 991px) {
-  .btnPrimary{
+  .btnPrimary {
     font-size: 13px;
     min-height: 40px;
   }
 }
 
 @media only screen and (max-width: 767px) {
-
   .customModal .ant-modal-content {
-      padding: 25px 16px;
+    padding: 25px 16px;
   }
 
-  .customModal .ant-modal-content .ant-modal-close{
+  .customModal .ant-modal-content .ant-modal-close {
     top: 12px;
     inset-inline-end: 10px;
   }
@@ -969,46 +1049,47 @@ button:focus{
     font-size: 12px;
   }
 
-  .ant-select:not(.ant-select-customize-input) .ant-select-selector{
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
     padding: 5px 8px;
     height: auto;
     padding-right: 35px;
   }
 
-  .ant-select .ant-select-selector .ant-select-selection-item{
+  .ant-select .ant-select-selector .ant-select-selection-item {
     display: flex;
     align-items: center;
   }
 
-  .ant-select.ant-select-single .ant-select-selector .ant-select-selection-placeholder{
+  .ant-select.ant-select-single
+    .ant-select-selector
+    .ant-select-selection-placeholder {
     display: flex;
     align-items: center;
   }
 
-  .customradio label.ant-radio-button-wrapper{
-      height: 40px;
+  .customradio label.ant-radio-button-wrapper {
+    height: 40px;
   }
 
   .customModal .formFields .form-group {
-      margin-bottom: 16px;
+    margin-bottom: 16px;
   }
 
-  .ant-select-single .ant-select-selector .ant-select-selection-search-input{
+  .ant-select-single .ant-select-selector .ant-select-selection-search-input {
     height: 38px !important;
   }
 
-  .cutomeAutoCompliteArrow .ant-select .ant-select-selection-search-input{
-      padding-right: 20px !important;
+  .cutomeAutoCompliteArrow .ant-select .ant-select-selection-search-input {
+    padding-right: 20px !important;
   }
 
-  .uploadLoading .ant-progress .ant-progress-inner{
+  .uploadLoading .ant-progress .ant-progress-inner {
     width: 50px !important;
     height: 50px !important;
     font-size: 10px !important;
   }
 
-  .ImageDragdropCustom .ant-upload-hint{
+  .ImageDragdropCustom .ant-upload-hint {
     margin: 0;
   }
-
 }

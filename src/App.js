@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SignIn from './components/SignIn/SignIn';
-import ChatListing from './components/ChatListing/ChatListing';
+import ChatListing from './components/ChannelList/ChannelList';
 import "./assets/css/common.css";
 import "./assets/css/style.css";
 
@@ -16,7 +16,7 @@ const isAuthenticated = () => {
 
 const PublicRoute = ({ Component }) => {
   return isAuthenticated() ? (
-    <Navigate to="/chat-listing" />
+    <Navigate to="/channel-listing" />
   ) : (
     <Component />
   );
@@ -30,7 +30,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<PublicRoute Component={SignIn} />} />
-      <Route path='/chat-listing' element={<PrivateRoute Component={ChatListing} />} />
+      <Route path='/channel-listing' element={<PrivateRoute Component={ChatListing} />} />
       <Route path='*' element={<PrivateRoute Component={SignIn} />} />
     </Routes>
   );

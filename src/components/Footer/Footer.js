@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ChannelList from '../ChatListing/ChatListing';
-import Setting from '../Setting/Setting';
+
 const Footer = ({ setActiveTab, activeTab }) => {
 
     return (

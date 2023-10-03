@@ -40,7 +40,7 @@ const Setting = () => {
                     <div class="chatWrapperMain">
                         <div class="SettingProfileInfo">
                             <div class="SettingProfileInfoName">
-                                <input class="FormContorl" type="text" placeholder="name" value="Bhuvan Desai" />
+                                <input class="FormContorl" type="text" placeholder="name" value={localStorage.getItem("FullName")} />
                             </div>
                             <div class="SettingProfileLogout">
                                 <button class="Btnlogout" onClick={() => logOutUser()}><img src={logoutIcon} alt="logout" width="18" height="18" />Logout</button>

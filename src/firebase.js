@@ -7,14 +7,14 @@ const firebaseConfig = {
   // appId: "1:662591011312:web:74d28c2234cef3ea7bc535",
   // measurementId: "G-JLBSP6WMDC",
 
-  // apiKey: "AIzaSyBmwJCSVWPC1nuipS6BRbu3BhZE7cjQws0",
-  // authDomain: "upchat-af56d.firebaseapp.com",
-  // projectId: "upchat-af56d",
-  // storageBucket: "upchat-af56d.appspot.com",
-  // messagingSenderId: "940458219195",
-  // appId: "1:940458219195:web:0c1f481a516befa8fa3b9e",
-  // measurementId: "G-98CSFQLREY",
-  // };
+  apiKey: "AIzaSyBmwJCSVWPC1nuipS6BRbu3BhZE7cjQws0",
+  authDomain: "upchat-af56d.firebaseapp.com",
+  projectId: "upchat-af56d",
+  storageBucket: "upchat-af56d.appspot.com",
+  messagingSenderId: "940458219195",
+  appId: "1:940458219195:web:0c1f481a516befa8fa3b9e",
+  measurementId: "G-98CSFQLREY",
+
 
   // apiKey: "AIzaSyDPAPbI3q5cGNWJT5Z2tIekNR7I76QSFM8",
   // authDomain: "anitupchatdb2.firebaseapp.com",
@@ -65,13 +65,13 @@ const firebaseConfig = {
   // appId: "1:196137845484:web:f78c5b496c5d0c9b799bc9",
   // measurementId: "G-TDHW5FWBB9"
 
-  apiKey: "AIzaSyBuiULHZoCUjl5dd7TR1QAOqdIWdg_zl8k",
-  authDomain: "upchattemp3.firebaseapp.com",
-  projectId: "upchattemp3",
-  storageBucket: "upchattemp3.appspot.com",
-  messagingSenderId: "165168722109",
-  appId: "1:165168722109:web:84dee7c89ddde8599347d4",
-  measurementId: "G-7C65E4FVMZ"
+  // apiKey: "AIzaSyBuiULHZoCUjl5dd7TR1QAOqdIWdg_zl8k",
+  // authDomain: "upchattemp3.firebaseapp.com",
+  // projectId: "upchattemp3",
+  // storageBucket: "upchattemp3.appspot.com",
+  // messagingSenderId: "165168722109",
+  // appId: "1:165168722109:web:84dee7c89ddde8599347d4",
+  // measurementId: "G-7C65E4FVMZ"
 
   // apiKey: "AIzaSyCKqjDu-BNUudyikOndcLMGkem3N9GLzjQ",
   // authDomain: "upchattemp4.firebaseapp.com",

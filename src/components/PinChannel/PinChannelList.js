@@ -1,23 +1,53 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import upchatPinnedIcon from "../../assets/images/svg/upchatPinnedIcon.svg"
-import { getPinChannel } from "../FirebaseFunction/FirebaseFunction"
+import { getPinChannelData, unpinChannel } from "../FirebaseFunction/FirebaseFunction"
+import { Dropdown, Space } from "antd";
+import { ChannelMenu } from "../../constants/application";
+import { ReactComponent as PinSVG } from "../../assets/images/svg/pin.svg";
+import { ReactComponent as ViewHRDetailsSVG } from "../../assets/images/svg/viewHrDetails.svg";
+import { ReactComponent as LeaveSVG } from "../../assets/images/svg/leave.svg";
 
-
-const PinChannelList = () => {
+const PinChannelList = ({ setpinChannel, pinChannel, setpinData, pinData }) => {
     const [showBody, setShowBody] = useState(true);
     const [collapseClass, setCollapseClass] = useState(false);
-    const [pinData, setpinData] = useState([]);
 
 
+    const menuItems = [
+        {
+            label: ChannelMenu.UNPIN_CHANNEL,
+            key: ChannelMenu.UNPIN_CHANNEL,
+            icon: <PinSVG />,
+        },
+        {
+            label: ChannelMenu.VIEW_HR_DETAILS,
+            key: ChannelMenu.VIEW_HR_DETAILS,
+            icon: <ViewHRDetailsSVG />,
+        },
+        {
+            label: ChannelMenu.LEAVE,
+            key: ChannelMenu.LEAVE,
+            icon: <LeaveSVG />,
+        },
+    ];
     const toggleAccordion = () => {
         setShowBody(!showBody);
         setCollapseClass(!collapseClass);
     };
     let isCollapsible = true
-    console.log("pinDatapinDatapinData", pinData)
     useEffect(() => {
-        getPinChannel(setpinData)
+        getPinChannelData(setpinData)
+    }, [pinChannel]);
+    const channelDropdown = useCallback(async (value, item) => {
+        if (value?.key === "Unpin Channel") {
+            unpinChannel(item, setpinChannel)
+        } else if (value?.key === "View HR Detail Page") {
+            window.open(
+                `http://3.218.6.134:9093/allhiringrequest/${item?.hrID}`,
+                "_blank"
+            );
+        }
     }, []);
+
     return (
         <div className="chatWrapper allPinned">
             <div className="MsgChannelsMiddleTopStatus">
@@ -32,10 +62,10 @@ const PinChannelList = () => {
 
             {showBody && (
                 <>
-                    {pinData.length > 0 && pinData.map((items) => {
-                        return (<div className="chatItem unreadMsg">
+                    {pinData.length > 0 && pinData.map((items, index) => {
+                        return (<div className="chatItem unreadMsg" key={index}>
                             <div className="dFlex">
-                                <div className="chatInitialThumb blueThumb">
+                                <div className="chatInitialThumb" style={{ background: items.backGroudColor, color: items.fontColor }}>
                                     {items.companyInitial}
                                 </div>
                                 <div className="chatGroupDetails">
@@ -53,10 +83,27 @@ const PinChannelList = () => {
                                     .toLocaleTimeString()
                                     .replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3")}</div>
                                 {/* <div className="unreadNum">5</div> */}
-                                <a href="#" className="dotMenuMain">
-                                    <span className="dotMenu"></span>
-                                </a>
+
+                                <Dropdown
+                                    className="dotMenuMain dotMenuhz"
+                                    placement="bottomRight"
+                                    menu={{
+                                        items: menuItems,
+                                        onClick: (value) => {
+                                            channelDropdown(value, items);
+                                        },
+                                    }}
+                                    trigger={["click"]}
+                                >
+                                    <a onClick={(e) => e.preventDefault()}>
+                                        <Space>
+                                            <span className="dotMenu"></span>
+                                        </Space>
+                                    </a>
+                                </Dropdown>
+
                             </div>
+
                         </div>)
                     })}
 

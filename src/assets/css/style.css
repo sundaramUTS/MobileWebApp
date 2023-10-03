@@ -1609,3 +1609,42 @@
   height: 11px;
   border-radius: 20px;
 }
+
+.dotMenuMain {
+  padding: 2px 5px 6px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.dotMenuMain:hover {
+  background-color: rgba(217, 217, 217, 0.43);
+}
+
+.dotMenu {
+  background-color: #232323;
+  width: 3px;
+  height: 3px;
+  position: relative;
+  display: block;
+  border-radius: 30px;
+}
+
+.dotMenu::before,
+.dotMenu::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  background-color: #232323;
+  width: 3px;
+  height: 3px;
+  border-radius: 30px;
+}
+
+.dotMenu::before {
+  top: -5px;
+}
+
+.dotMenu::after {
+  top: 5px;
+}

@@ -1,7 +1,55 @@
-import React from 'react'
+import React, { useState, useRef, useEffect, useCallback } from 'react'
 import upchatAllChannels from "../../assets/images/svg/upchatAllChannels.svg"
+import { getUnPinChannelData, pinChannel } from "../FirebaseFunction/FirebaseFunction"
+import { Dropdown, Space } from "antd";
+import { ChannelMenu } from "../../constants/application";
+import { ReactComponent as PinSVG } from "../../assets/images/svg/pin.svg";
+import { ReactComponent as ViewHRDetailsSVG } from "../../assets/images/svg/viewHrDetails.svg";
+import { ReactComponent as LeaveSVG } from "../../assets/images/svg/leave.svg";
 
-const AllChannelList = () => {
+const AllChannelList = ({ currentPage, setTotalPages, setunpinChannel, setUnpinData, unpinChannel, unpinData }) => {
+
+    const [showBody, setShowBody] = useState(true);
+    const [collapseClass, setCollapseClass] = useState(false);
+
+    const menuItems = [
+        {
+            label: ChannelMenu.PIN_CHANNEL,
+            key: ChannelMenu.PIN_CHANNEL,
+            icon: <PinSVG />,
+        },
+        {
+            label: ChannelMenu.VIEW_HR_DETAILS,
+            key: ChannelMenu.VIEW_HR_DETAILS,
+            icon: <ViewHRDetailsSVG />,
+        },
+
+        {
+            label: ChannelMenu.LEAVE,
+            key: ChannelMenu.LEAVE,
+            icon: <LeaveSVG />,
+        },
+    ];
+
+    const toggleAccordion = () => {
+        setShowBody(!showBody);
+        setCollapseClass(!collapseClass);
+    };
+    let isCollapsible = true
+    const channelDropdown = useCallback(async (value, item) => {
+        if (value?.key === "PIN Channel") {
+            pinChannel(item, setunpinChannel)
+        }
+        else if (value?.key === "View HR Detail Page") {
+            window.open(
+                `http://3.218.6.134:9093/allhiringrequest/${item?.hrID}`,
+                "_blank"
+            );
+        }
+    }, []);
+    useEffect(() => {
+        getUnPinChannelData(setUnpinData, currentPage, setTotalPages, unpinData)
+    }, [unpinChannel, currentPage])
     return (
         <div className="chatWrapper AllChannelsDetail">
             <div className="MsgChannelsMiddleTopStatus">
@@ -9,154 +57,57 @@ const AllChannelList = () => {
                     <img src={upchatAllChannels} alt="AllChannels" />
                     <h4>All Channels</h4>
                 </div>
-                <div className="MsgChannelsStatusRight">
+                <div className="MsgChannelsStatusRight" onClick={isCollapsible ? toggleAccordion : null}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" fill="none" className=""><path fill="#232323" d="m6.67 8 6.666-6.784L12.142 0 6.669 5.597 1.197.028.003 1.244 6.669 8Z"></path></svg>
                 </div>
             </div>
+            {showBody && (
+                <>
+                    {unpinData.length > 0 && unpinData.map((items, index) => {
+                        return (<div className="chatItem unreadMsg" key={index}>
+                            <div className="dFlex">
+                                <div className="chatInitialThumb" style={{ background: items.backGroudColor, color: items.fontColor }}>
+                                    {items.companyInitial}
+                                </div>
+                                <div className="chatGroupDetails">
+                                    <div className="channelName">
+                                        {items?.companyName} |{" "}
+                                        {items.role.length > 27
+                                            ? `${items.role.substring(0, 27)}...`
+                                            : items.role}
+                                    </div>
+                                    <span className="hrStatus">    {items?.hrNumber} | {items?.hrStatus}</span>
+                                </div>
+                            </div>
+                            <div className="dFlexTime">
+                                <div className="timeStamp">{new Date(items?.lastMessageTime * 1000)
+                                    .toLocaleTimeString()
+                                    .replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3")}</div>
+                                {/* <div className="unreadNum">5</div> */}
 
-            <div className="chatItem unreadMsg">
-                <div className="dFlex">
-                    <div className="chatInitialThumb blueThumb">
-                        AN
-                    </div>
-                    <div className="chatGroupDetails">
-                        <div className="channelName">
-                            Senior Backend Engineer | Andela
-                        </div>
-                        <span className="hrStatus">HR170523201242 | HR Status : In Process</span>
-                    </div>
-                </div>
-                <div className="dFlexTime">
-                    <div className="timeStamp">12:30 PM</div>
-                    <div className="unreadNum">5</div>
-                    <a href="#" className="dotMenuMain">
-                        <span className="dotMenu"></span>
-                    </a>
-                </div>
-            </div>
+                                <Dropdown
+                                    className="dotMenuMain dotMenuhz"
+                                    placement="bottomRight"
+                                    menu={{
+                                        items: menuItems,
+                                        onClick: (value) => {
+                                            channelDropdown(value, items);
+                                        },
+                                    }}
+                                    trigger={["click"]}
+                                >
+                                    <a onClick={(e) => e.preventDefault()}>
+                                        <Space>
+                                            <span className="dotMenu"></span>
+                                        </Space>
+                                    </a>
+                                </Dropdown>
+                            </div>
+                        </div>)
+                    })}
 
-            <div className="chatItem unreadMsg">
-                <div className="dFlex">
-                    <div className="chatInitialThumb darkRedThumb">
-                        AN
-                    </div>
-                    <div className="chatGroupDetails">
-                        <div className="channelName">
-                            Senior Backend Engineer | Andela
-                        </div>
-                        <span className="hrStatus">HR170523201242 | HR Status : In Process</span>
-                    </div>
-                </div>
-                <div className="dFlexTime">
-                    <div className="timeStamp">12:30 PM</div>
-                    <div className="unreadNum">5</div>
-                    <a href="#" className="dotMenuMain">
-                        <span className="dotMenu"></span>
-                    </a>
-                </div>
-            </div>
-
-            <div className="chatItem">
-                <div className="dFlex">
-                    <div className="chatInitialThumb greenThumb">
-                        AN
-                    </div>
-                    <div className="chatGroupDetails">
-                        <div className="channelName">
-                            Senior Backend Engineer | Andela
-                        </div>
-                        <span className="hrStatus">HR170523201242 | HR Status : In Process</span>
-                    </div>
-                </div>
-                <div className="dFlexTime">
-                    <div className="timeStamp">12:30 PM</div>
-
-                    <a href="#" className="dotMenuMain">
-                        <span className="dotMenu"></span>
-                    </a>
-                </div>
-            </div>
-
-            <div className="chatItem">
-                <div className="dFlex">
-                    <div className="chatInitialThumb yellowThumb">
-                        AN
-                    </div>
-                    <div className="chatGroupDetails">
-                        <div className="channelName">
-                            Senior Backend Engineer | Andela
-                        </div>
-                        <span className="hrStatus">HR170523201242 | HR Status : In Process</span>
-                    </div>
-                </div>
-                <div className="dFlexTime">
-                    <div className="timeStamp">12:30 PM</div>
-                    <a href="#" className="dotMenuMain">
-                        <span className="dotMenu"></span>
-                    </a>
-                </div>
-            </div>
-
-            <div className="chatItem">
-                <div className="dFlex">
-                    <div className="chatInitialThumb skyBlueThumb">
-                        AN
-                    </div>
-                    <div className="chatGroupDetails">
-                        <div className="channelName">
-                            Senior Backend Engineer | Andela
-                        </div>
-                        <span className="hrStatus">HR170523201242 | HR Status : In Process</span>
-                    </div>
-                </div>
-                <div className="dFlexTime">
-                    <div className="timeStamp">12:30 PM</div>
-                    <a href="#" className="dotMenuMain">
-                        <span className="dotMenu"></span>
-                    </a>
-                </div>
-            </div>
-
-            <div className="chatItem">
-                <div className="dFlex">
-                    <div className="chatInitialThumb orangeThumb">
-                        AN
-                    </div>
-                    <div className="chatGroupDetails">
-                        <div className="channelName">
-                            Senior Backend Engineer | Andela
-                        </div>
-                        <span className="hrStatus">HR170523201242 | HR Status : In Process</span>
-                    </div>
-                </div>
-                <div className="dFlexTime">
-                    <div className="timeStamp">12:30 PM</div>
-                    <a href="#" className="dotMenuMain">
-                        <span className="dotMenu"></span>
-                    </a>
-                </div>
-            </div>
-
-            <div className="chatItem">
-                <div className="dFlex">
-                    <div className="chatInitialThumb orangeThumb">
-                        AN
-                    </div>
-                    <div className="chatGroupDetails">
-                        <div className="channelName">
-                            Senior Backend Engineer | Andela
-                        </div>
-                        <span className="hrStatus">HR170523201242 | HR Status : In Process</span>
-                    </div>
-                </div>
-                <div className="dFlexTime">
-                    <div className="timeStamp">12:30 PM</div>
-
-                    <a href="#" className="dotMenuMain">
-                        <span className="dotMenu"></span>
-                    </a>
-                </div>
-            </div>
+                </>
+            )}
 
         </div>
     )
