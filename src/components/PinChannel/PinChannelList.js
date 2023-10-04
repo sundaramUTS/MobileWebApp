@@ -6,8 +6,10 @@ import { ChannelMenu } from "../../constants/application";
 import { ReactComponent as PinSVG } from "../../assets/images/svg/pin.svg";
 import { ReactComponent as ViewHRDetailsSVG } from "../../assets/images/svg/viewHrDetails.svg";
 import { ReactComponent as LeaveSVG } from "../../assets/images/svg/leave.svg";
+import { NetworkInfo } from "../../constants/network"
+const PinChannelList = ({ setpinData, pinData, setpinTempData }) => {
+    const loginUserId = localStorage.getItem("EmployeeID");
 
-const PinChannelList = ({ setpinChannel, pinChannel, setpinData, pinData }) => {
     const [showBody, setShowBody] = useState(true);
     const [collapseClass, setCollapseClass] = useState(false);
 
@@ -35,14 +37,14 @@ const PinChannelList = ({ setpinChannel, pinChannel, setpinData, pinData }) => {
     };
     let isCollapsible = true
     useEffect(() => {
-        getPinChannelData(setpinData)
-    }, [pinChannel]);
+        getPinChannelData(setpinData, setpinTempData, loginUserId)
+    }, []);
     const channelDropdown = useCallback(async (value, item) => {
         if (value?.key === "Unpin Channel") {
-            unpinChannel(item, setpinChannel)
+            unpinChannel(item, loginUserId)
         } else if (value?.key === "View HR Detail Page") {
             window.open(
-                `http://3.218.6.134:9093/allhiringrequest/${item?.hrID}`,
+                `${NetworkInfo.NETWORK}/allhiringrequest/${item?.hrID}`,
                 "_blank"
             );
         }
@@ -61,7 +63,9 @@ const PinChannelList = ({ setpinChannel, pinChannel, setpinData, pinData }) => {
             </div>
 
             {showBody && (
+
                 <>
+
                     {pinData.length > 0 && pinData.map((items, index) => {
                         return (<div className="chatItem unreadMsg" key={index}>
                             <div className="dFlex">
@@ -106,7 +110,9 @@ const PinChannelList = ({ setpinChannel, pinChannel, setpinData, pinData }) => {
 
                         </div>)
                     })}
-
+                    {pinData.length === 0 && (
+                        <span className="noDataFound">No data found</span>
+                    )}
                 </>
             )}
         </div>

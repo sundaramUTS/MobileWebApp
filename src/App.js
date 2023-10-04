@@ -6,9 +6,6 @@ import SignIn from './components/SignIn/SignIn';
 import ChatListing from './components/ChannelList/ChannelList';
 import "./assets/css/common.css";
 import "./assets/css/style.css";
-
-
-
 const isAuthenticated = () => {
   let _token = localStorage.getItem("Token");
   return _token ? true : false;
@@ -27,6 +24,7 @@ const PrivateRoute = ({ Component }) => {
 };
 
 const App = () => {
+
   return (
     <Routes>
       <Route path="/" element={<PublicRoute Component={SignIn} />} />

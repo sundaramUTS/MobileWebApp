@@ -14,7 +14,7 @@ export const signInRequest = async (userReqData) => {
   }
 }
 
-export const LogOut = async () => {
+export const Logout = async () => {
   try {
     let httpService = new HttpServices();
     httpService.URL = NetworkInfo.NETWORK + SubDomain.USEROPERTIONAPI + UserAPI.LOGOUT + `?token=${localStorage.getItem('Token')}`;

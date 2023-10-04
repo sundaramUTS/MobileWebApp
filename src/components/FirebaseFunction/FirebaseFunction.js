@@ -1,13 +1,11 @@
-import React from 'react'
 import firebaseConfig from "../../firebase";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { limits } from "../../constant";
 firebase.initializeApp(firebaseConfig);
 const firestore = firebase.firestore();
-const loginUserId = localStorage.getItem("EmployeeID");
 const dataPerPage = 10;
-export const tempInfoData = async (data) => {
+export const tempInfoData = async (data, loginUserId) => {
     let countArr = {};
     const readOrUnread = firestore.collectionGroup("user_chats");
     readOrUnread
@@ -36,7 +34,7 @@ export const tempInfoData = async (data) => {
         });
 };
 
-export const getPinData = (tempArr, setpinData) => {
+export const getPinData = (tempArr, setpinData, setpinTempData) => {
     const collectionRef = firestore.collection("channels");
     if (tempArr?.length > 0) {
         const batch = tempArr.splice(0, 30);
@@ -49,51 +47,62 @@ export const getPinData = (tempArr, setpinData) => {
                     mergedResults.push(doc.data());
                 });
                 setpinData(mergedResults);
+                setpinTempData(mergedResults)
             });
     }
 };
 
-export const getPinChannelData = (setpinData) => {
-    let tempArrPin = [];
+export const getPinChannelData = (setpinData, setpinTempData, loginUserId) => {
     const unsubscribe = firestore
         .collectionGroup(`user`)
         .where("userEmpId", "==", loginUserId)
         .limit(limits.pageSize)
         .onSnapshot((snapshot) => {
+            let tempArrPin = [];
             snapshot.forEach((doc) => {
                 const user = doc.data();
                 if (user.isPinned) {
                     tempArrPin.push(user?.channelID.toString());
-                    tempInfoData(user?.channelID.toString());
+                    tempInfoData(user?.channelID.toString(), loginUserId);
                 }
             });
-            getPinData(tempArrPin, setpinData);
+            if (tempArrPin.length > 0) {
+                getPinData(tempArrPin, setpinData, setpinTempData);
+            } else {
+                setpinData(tempArrPin)
+                setpinTempData(tempArrPin)
+            }
+
         });
     return () => unsubscribe();
 }
 
-export const getUnPinChannelData = (setUnpinData, currentPage, setTotalPages, unpinData) => {
-    let tempArrUnPin = [];
+export const getUnPinChannelData = (setUnpinData, currentPage, setTotalPages, unpinData, setUnTempData, loginUserId) => {
     const unsubscribe = firestore
         .collectionGroup(`user`)
         .where("userEmpId", "==", loginUserId)
         .limit(limits.pageSize)
         .onSnapshot((snapshot) => {
+            let tempArrUnPin = [];
             snapshot.forEach((doc) => {
                 const user = doc.data();
                 if (!user.isPinned) {
-
                     tempArrUnPin.push(user?.channelID.toString());
-                    tempInfo(user?.channelID.toString());
+                    tempInfo(user?.channelID.toString(), loginUserId);
                 }
             });
+            if (tempArrUnPin.length > 0) {
+                getUnpinData(setUnpinData, tempArrUnPin, currentPage, unpinData, setUnTempData);
+            } else {
+                setUnpinData(tempArrUnPin)
+                setUnTempData(tempArrUnPin)
+            }
             setTotalPages(Math.ceil(tempArrUnPin.length / dataPerPage));
-            getUnpinData(setUnpinData, tempArrUnPin, currentPage, unpinData);
         });
     return () => unsubscribe();
 }
 
-export const getUnpinData = async (setUnpinData, tempArr, pageNo, unpinData) => {
+export const getUnpinData = async (setUnpinData, tempArr, pageNo, unpinData, setUnTempData) => {
     try {
         const collectionRef = firestore.collection("channels");
 
@@ -105,8 +114,8 @@ export const getUnpinData = async (setUnpinData, tempArr, pageNo, unpinData) => 
                 .limit(dataPerPage)
                 .onSnapshot((querySnapshot) => {
                     const mergedResults = querySnapshot.docs.map((doc) => doc.data());
-
                     setUnpinData([...unpinData, ...mergedResults]);
+                    setUnTempData([...unpinData, ...mergedResults])
                 })
         }
     } catch (error) {
@@ -114,7 +123,7 @@ export const getUnpinData = async (setUnpinData, tempArr, pageNo, unpinData) => 
     }
 };
 let tempCount = [];
-export const tempInfo = async (data) => {
+export const tempInfo = async (data, loginUserId) => {
     let countArr = {};
     const readOrUnread = firestore.collectionGroup("user_chats");
     readOrUnread
@@ -129,7 +138,7 @@ export const tempInfo = async (data) => {
 
         });
 };
-export const unpinChannel = (item, setpinChannel) => {
+export const unpinChannel = (item, loginUserId) => {
     try {
         const docRef = firestore
             .collection("ChannelUserMapping")
@@ -143,23 +152,22 @@ export const unpinChannel = (item, setpinChannel) => {
                 const document = querySnapshot.docs[0];
                 if (document) {
                     const documentRef = document.ref;
-                    setpinChannel(true)
                     return documentRef.update({
                         isPinned: false,
                     });
                 }
             })
             .then(() => {
-                // console.log("Document updated successfully");
+
             })
             .catch((error) => {
-                // console.error("Error updating document:", error);
+
             });
     } catch (error) {
         console.error(error);
     }
 }
-export const pinChannel = (item, setunpinChannel) => {
+export const pinChannel = (item, loginUserId) => {
     try {
         const docRef = firestore
             .collection("ChannelUserMapping")
@@ -173,68 +181,17 @@ export const pinChannel = (item, setunpinChannel) => {
                 const document = querySnapshot.docs[0];
                 if (document) {
                     const documentRef = document.ref;
-                    setunpinChannel(true)
                     return documentRef.update({
                         isPinned: true,
                     });
                 }
             })
             .then(() => {
-                // return 0;
-                // console.log("Document updated successfully");
             })
             .catch((error) => {
-                // console.error("Error updating document:", error);
+
             });
     } catch (error) {
         console.error(error);
     }
 }
-
-export const fetchdata = (search, setCurrentPage) => {
-    if (search) {
-        // const collectionRef = firestore.collection("channels");
-        // let filteredData = [];
-        // const batchedQueries = [];
-        // const batchSize = 30; // Number of values per batch
-
-        // for (let i = 0; i < unpinData.length; i += batchSize) {
-        //     const batch = unpinData.slice(i, i + batchSize);
-        //     const query = collectionRef.where("enc_channelID", "in", batch).get();
-        //     batchedQueries.push(query);
-        // }
-        // Promise.all(batchedQueries)
-        //     .then((results) => {
-        //         // Merge and process the results from all the queries
-
-        //         let mergedResults = [];
-        //         results.forEach((querySnapshot) => {
-        //             querySnapshot.forEach((doc) => {
-        //                 mergedResults.push(doc.data());
-        //             });
-        //         });
-        //         mergedResults = mergedResults?.filter((item) => {
-        //             return (
-        //                 item?.role
-        //                     ?.toLowerCase()
-        //                     ?.includes(search?.toLowerCase().trim()) ||
-        //                 item?.companyName
-        //                     .toLowerCase()
-        //                     .includes(search?.toLowerCase().trim()) ||
-        //                 item?.hrNumber
-        //                     ?.toLowerCase()
-        //                     ?.includes(search?.toLowerCase().trim())
-        //             );
-        //         });
-        //         setAllChannel(mergedResults);
-        //         // Handle mergedResults here
-        //     })
-        //     .catch((error) => {
-        //         // Handle errors here
-        //         console.error("error", error);
-        //     });
-
-    } else {
-        setCurrentPage(1);
-    }
-};

@@ -4,13 +4,13 @@ import settingUser from "../../assets/images/settingUser.png"
 import logoutIcon from "../../assets/images/svg/logoutIcon.svg"
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { LogOut } from '../../services/api';
+import { Logout } from '../../services/api';
 const Setting = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const logOutUser = async () => {
         dispatch({ type: 'LOGOUT_USER' });
-        LogOut()
+        Logout()
         localStorage.clear()
         navigate("/")
     }

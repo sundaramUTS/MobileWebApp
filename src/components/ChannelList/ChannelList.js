@@ -5,22 +5,24 @@ import upchatSearchIcon from "../../assets/images/svg/upchatSearchIcon.svg"
 import PinChannelList from "../PinChannel/PinChannelList";
 import AllChannelList from "../AllChannel/AllChannelList";
 import Footer from "../Footer/Footer";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Setting from "../Setting/Setting";
+
+
 const ChannelList = () => {
+
     const [activeTab, setActiveTab] = useState("active-hr");
     const arrawScroll = useRef(null);
     const [scrolling, setScrolling] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
-    const [pinChannel, setpinChannel] = useState(false);
-    const [unpinChannel, setunpinChannel] = useState(false);
     const [search, setSearch] = useState("");
     const [pinData, setpinData] = useState([]);
     const [unpinData, setUnpinData] = useState([]);
+    const [pinTempData, setpinTempData] = useState([]);
+    const [unpinTempData, setUnTempData] = useState([]);
 
     const handleScroll = () => {
-
         const element = arrawScroll.current;
         if (element) {
             if (
@@ -36,6 +38,34 @@ const ChannelList = () => {
             }
         }
     };
+    useEffect(() => {
+        if (search) {
+            // Filter unpinData
+            let filteredUnpinData = unpinTempData?.filter((item) => {
+                return (
+                    item?.role?.toLowerCase()?.includes(search?.toLowerCase()) ||
+                    item?.companyName.toLowerCase().includes(search?.toLowerCase()) ||
+                    item?.hrNumber?.toLowerCase()?.includes(search?.toLowerCase())
+                );
+            });
+
+            // Filter pinData
+            let filteredPinData = pinTempData?.filter((item) => {
+                return (
+                    item?.role?.toLowerCase()?.includes(search?.toLowerCase()) ||
+                    item?.companyName.toLowerCase().includes(search?.toLowerCase()) ||
+                    item?.hrNumber?.toLowerCase()?.includes(search?.toLowerCase())
+                );
+            });
+
+            setUnpinData(filteredUnpinData);
+            setpinData(filteredPinData);
+        } else {
+            setUnpinData(unpinTempData);
+            setpinData(pinTempData);
+        }
+    }, [search, unpinTempData, pinTempData]);
+
     return (
         <>
 
@@ -57,8 +87,8 @@ const ChannelList = () => {
 
                         <div className="chatWrapperMain" ref={arrawScroll}
                             onScroll={handleScroll}>
-                            <PinChannelList setpinChannel={setpinChannel} pinChannel={pinChannel} setpinData={setpinData} pinData={pinData} />
-                            <AllChannelList currentPage={currentPage} setTotalPages={setTotalPages} setunpinChannel={setunpinChannel} unpinChannel={unpinChannel} setUnpinData={setUnpinData} unpinData={unpinData} />
+                            <PinChannelList setpinData={setpinData} pinData={pinData} setpinTempData={setpinTempData} />
+                            <AllChannelList currentPage={currentPage} setTotalPages={setTotalPages} setUnpinData={setUnpinData} unpinData={unpinData} setUnTempData={setUnTempData} />
 
                         </div>
 
